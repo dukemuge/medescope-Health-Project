@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>patient timeline</title>
+
+</head>
+<body>
+
+
+
+    <link th:href="@{/css/style_2016.css}" rel="stylesheet">
+
+    <link th:href="@{/font-awesome.min.css}" rel="stylesheet">
+
+
+    <body style="position: relative; min-height: 100%; top: 0px;">
+
+        
+          
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+                
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/enrollfeedback" target="_blank"><strong>Give us your Feedback</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/enrolldonation"><strong>Donate to our courses</strong></a></li>
+                    <li class="divider"></li>
+                     <li><a href="/resetpassword"><strong>manage my account</strong>
+                            </a></li>
+                    
+                    <li class="divider"></li>
+                    <li><a href="/viewannouncement"><strong>Announcement</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewpatienttimeline" style="color: #fff"><strong>Patient Timeline</strong></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div> 
+        <!-- <div class="container-fluid"> -->
+
+    <div class="row-fluid">
+  <div class="sidebar-nav">
+            <ul class="nav nav-list">
+                    <li class="nav-header">Manage your health</li>
+                    <li><a href="/enrollrequest">
+                        <img th:src="@{/img/result.png}">Request your lab results</a></li>
+                    <li><a href="/enrollrecordp" >
+                        <img th:src="@{/img/folder.png}">Add and save my medical data</a></li>
+                    <li><a href="/addhealth" title="Share Individual Records with Health Providers">
+                        <li><a href="https://www.dropbox.com/" target="_blank" title="My Health Devices">
+                            <img th:src="@{/img/imagesjjk.png}">Save my medical records to Cloud</a></li>
+                        <img th:src="@{/img/images7.jfif}"> Add my Personal profile</a></li>
+                        <li><a href="/enrollprofile" >
+                            <img th:src="@{/img/images7.jfif}">View and edit my personal profile</a></li>
+                            <li><a href="/viewinsurance" title="Share Individual Records with Health Providers">
+  <img th:src="@{/img/insurance.png}">Health insurance card supported</a></li>
+                    
+                    <li class="nav-header">Reminders and Appointments</li>
+                    <li><a href="/remind/new" data-toggle="modal" >
+                        <img th:src="@{/img/alert.png}">Add and view notification &amp; Reminders</a></li>
+                       
+                        <li><a href="/enrollappointment" data-toggle="modal">
+                                <img th:src="@{/img/appointment.png}">Book appointments</a></li>
+    
+                   
+            </ul>
+            <ul class="thumbnails" style="padding-top: 10px; min-height: 100px;" id="friendsList">
+            </ul>
+        </div>
+        <!--/.well -->
+
+        <div class="content">
+           
+            <div class="healthsnapshot-banner">
+                    <h4 class="under-border">Welcome to xxxx dashboard  </h4>
+                    <p>We at XXXX HOSPITAL believe in a healthier you and put our patient first and through our patient portal you  can access a variety of online health services.through our patient dashboard,you can do the following</p>
+            </div>
+            <!-- <br>             -->
+        </div>
+        <!-- Timeline starts here -->
+        <div class="page" id="myTimeline">
+            <div class="main-page">
+                <section id="cd-timeline" class="cd-container">           
+                            <div class="cd-timeline-block article-box">
+						        <div class="cd-timeline-img bounce-in">
+							        <img th:src="@{/files/text155.svg}" alt="">
+						        </div> <!-- cd-timeline-img -->
+						        <div class="cd-timeline-content bounce-in">   
+							        <h2>request your test results</h2>
+                                    <h4>Test results at the tip of hands</h4>
+                                   
+							        <p>
+                                        Fill the request lab tests and we will email your Lab results within 24 hours of submission request
+							        </p>							        
+						        </div> <!-- cd-timeline-content -->
+                            </div> 
+                            <!-- beginning of second article -->  
+                            <div class="cd-timeline-block article-box">
+						        <div class="cd-timeline-img bounce-in">
+							        <img th:src="@{/files/text155.svg}" alt="">
+						        </div> <!-- cd-timeline-img -->
+						        <div class="cd-timeline-content bounce-in">   
+							        <h2>schedule appointment</h2>
+                                    <h4>book appointment online with your doctor</h4>
+                                   
+							        <p>
+                                       you can schedule appointments online with your favourite Doctor at the comfort of your home
+                                
+							        </p>
+							        
+						        </div> <!-- cd-timeline-content -->
+                            </div>
+                            <div class="cd-timeline-block article-box">
+						        <div class="cd-timeline-img bounce-in">
+							        <img th:src="@{/files/text155.svg}" alt="">
+						        </div> <!-- cd-timeline-img -->
+						        <div class="cd-timeline-content bounce-in">   
+							        <h2>Add reminders</h2>
+                                    <h4>add reminders and notification of events</h4>
+                                    
+							        <p>
+                                        you can now add reminders of events to your portal to help remind you day to day health activities and engagements
+                                
+							        </p>
+							        
+						        </div> <!-- cd-timeline-content -->
+                            </div>
+                            <div class="cd-timeline-block article-box">
+						        <div class="cd-timeline-img bounce-in">
+							        <img th:src="@{/files/text155.svg}" alt="">
+						        </div> <!-- cd-timeline-img -->
+						        <div class="cd-timeline-content bounce-in">   
+							        <h2>manage your health data</h2>
+                                    <h4>Take control of your data </h4>
+                                   
+							        <p>
+                                        Through our patient dashboard you can effectively  add your health information and that of your close people to better
+                                
+							        </p>
+						        </div> <!-- cd-timeline-content -->
+                            </div> 
+                                        
+                        </section>
+            </div>
+        </div>
+
+    </div>
+</div> 
+
+
+</div>
+
+
+   
+        <hr>
+        <!-- Placed at the end of the document so the pages load faster -->
+                 
+                
+            
+        
+        </body></html>
+
+

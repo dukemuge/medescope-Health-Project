@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>clerk timeline</title>
+
+</head>
+<body>
+
+
+  
+
+    <link th:href="@{/bootstrap/style_2016.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/jquery.autocomplete.css}" rel="stylesheet">
+
+    <link th:href="@{bootstrap/font-awesome.min.css}" rel="stylesheet">
+
+
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+                
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                    <li class="divider"></li>
+                    
+                  
+                    
+                    <li class="divider"></li>
+                    <li><a href="https://www.dropbox.com/" target="_blank" ><strong>Save hospital document to cloud...........</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewclerktimeline" style="color: #fff"><strong>Clerk  Timeline.......</strong></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div> 
+        <div class="container-fluid">
+
+    <div class="row-fluid">
+  <div class="sidebar-nav">
+            <ul class="nav nav-list">
+                    <li class="nav-header">Clerk </li>
+                    <li><a href="/enrollrecord" title="My Health Providers">
+                        <img th:src="@{/img/folder.png}">Edit and view patients medical data records</a></li>
+                          <li><a href="/viewlabrequests" title="My Health Providers">
+                        <img th:src="@{/img/folder.png}">View lab requests</a></li>
+                     <li><a href="/enrolladmitted" title="My Health Providers">
+                        <img th:src="@{/img/folder.png}">Add admitted patients to our system</a></li>
+
+                         <li><a href="/enrollvisiting" title="My Health Providers">
+                        <img th:src="@{/img/folder.png}">Register visiting patients to our system</a></li>
+                   
+                   
+                   
+                      
+    
+    
+                   
+            </ul>
+            <ul class="thumbnails" style="padding-top: 10px; min-height: 100px;" id="friendsList">
+            </ul>
+        </div>
+        <!--/.well -->
+
+           
+             <div class="content"> 
+            <ol class="breadcrumb">
+             <div class="alert alert-success">
+              <li class="breadcrumb-item active">welcome to Lab dashboard </li>
+                              </div>
+
+            </ol>
+            
+                </div>
+              </div>
+             </div> 
+                
+     </div> 
+        
+
+   
+        <hr>
+        <!-- Placed at the end of the document so the pages load faster -->
+                 
+                
+            
+        
+        </body></html>
+
+

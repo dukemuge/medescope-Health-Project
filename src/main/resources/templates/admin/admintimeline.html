@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>admin timeline</title>
+
+</head>
+<body>
+
+
+
+    <link th:href="@{/css/style_2016.css}" rel="stylesheet">
+
+    <link th:href="@{/font-awesome.min.css}" rel="stylesheet">
+
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+                
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                    <li class="divider"></li>
+                    
+                  
+                    
+                    <li class="divider"></li>
+                    <li><a href="https://www.dropbox.com/" target="_blank" ><strong>Save hospital document to cloud...........</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewadmintimeline" style="color: #fff"><strong>Admin Timeline.......</strong></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div> 
+        <div class="container-fluid">
+
+    <div class="row-fluid">
+  <div class="sidebar-nav">
+              <ul class="nav nav-list">
+                    <li class="nav-header">hospital staff</li>
+                    <li><a href="/registerstaff" title="My Health Providers">
+                        <img th:src="@{/img/images7.jfif}">add and view hospital staff</a></li>
+                   
+                    
+                    <li class="nav-header">doctor tasks</li>
+                    <li><a href="/registerdoc" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/refer.png}">Register doctor to network</a></li>
+                       
+                        <li><a href="/managedoc" data-toggle="modal" title="Appointments and Reminders">
+                                <img th:src="@{/img/refer.png}">Manage doctor account</a></li>
+                                 
+                    <li class="nav-header">patient tasks</li>
+                    <li><a href="/viewpatient" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/imageskl.png}">view admitted patient</a></li>
+                        <li><a href="/patientaccount" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/images6.jfif}">manage patient account</a></li>
+                       
+                        <li><a href="/viewlabrequests" data-toggle="modal" title="Appointments and Reminders">
+                                <img th:src="@{/img/folder.png}">View lab requests</a></li>
+                                
+                        <li><a href="/viewfeedback" data-toggle="modal" title="Appointments and Reminders">
+                                <img th:src="@{/img/feedback.png}">view feedback</a></li>
+                                
+                        <li><a href="/viewdonation" data-toggle="modal" title="Appointments and Reminders">
+                                <img th:src="@{/img/gift.png}">view pledges and donations</a></li>
+                                
+                    <li class="nav-header">Announcements</li>
+                    <li><a href="/postannouncement" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/alert.png}">Post announcements</a></li>
+                          <li><a href="/enrollremind" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/insurance.png}">Add insurance supported</a></li>
+                         <li><a href="/uploaddocument" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/imagesjjk.png}">Upload doctor stuff</a></li>
+    
+    
+                   
+            </ul>
+            <ul class="thumbnails" style="padding-top: 10px; min-height: 100px;" id="friendsList">
+            </ul>
+        </div>
+        <!--/.well -->
+
+           
+             <div class="content"> 
+            <ol class="breadcrumb">
+             <div class="alert alert-success">
+              <li class="breadcrumb-item active">welcome to admin dashboard </li>
+                              </div>
+
+            </ol>
+            
+                </div>
+              </div>
+             </div> 
+                
+     </div> 
+        
+
+   
+        <hr>
+        <!-- Placed at the end of the document so the pages load faster -->
+                 
+                
+            
+        
+        </body></html>
+
+

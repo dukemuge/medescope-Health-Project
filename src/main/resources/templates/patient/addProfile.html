@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>add profile</title>
+
+</head>
+<body>
+
+
+
+    <link th:href="@{/css/style_2016.css}" rel="stylesheet">
+
+    <link th:href="@{/font-awesome.min.css}" rel="stylesheet">
+
+
+    <body style="position: relative; min-height: 100%; top: 0px;">
+
+        
+          
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+                
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/enrollfeedback" target="_blank"><strong>Give us your Feedback</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/enrolldonation"><strong>Donate to our courses</strong></a></li>
+                    <li class="divider"></li>
+                     <li><a href="/resetpassword"><strong>manage my account</strong>
+                            </a></li>
+                    
+                    <li class="divider"></li>
+                    <li><a href="/viewannouncement"><strong>Announcement</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewpatienttimeline" style="color: #fff"><strong>Patient Timeline</strong></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+        <!--/.well -->
+     
+        <div class="content">
+            <div class="row-fluid">
+                <div class="span3">&nbsp;</div>
+                <div class="span6">
+                    <div class="login-container">
+                        <div class="login-span">
+                            
+    
+                            <form class="form-horizontal well-plain-form" method="post" th:object="${profile}" th:action="@{/profile}">
+    
+                                <fieldset>
+                                        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                                                <p>Please Correct Errors Below</p>
+                                            </div>
+    
+                                    <h4 class="under-border">Fill the form to add profile</h4>
+                                    <br>
+    
+                                         
+                                    <div class="control-group">
+    
+                                        <label class="control-label-long" > Name </label>
+                                        <div class="controls-long">
+                                            <input type="text" th:field="*{fullname}" id="fullname" placeholder="enter  name">                                             <span class="inline-block" >
+                                                <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('fullname')}" th:errors="*{fullname}"></span>
+
+                                        </div>
+                                    </div>
+                                            
+                                    <div class="control-group">
+    
+                                            <label class="control-label-long" >Date of pledge</label>
+                                            <div class="controls-long">
+                                                <input type="date" th:field="*{dob}" id="dob" placeholder="indicate date of birth">                                             <span class="inline-block" >
+                                                    <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}"></span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+    
+                                            <label class="control-label-long" >Enter mobile no </label>
+                                            <div class="controls-long">
+                                                <input type="text" th:field="*{mobileno}" id="mobileno" placeholder="enter your id no">                                             <span class="inline-block" >
+                                                    <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('mobileno')}" th:errors="*{mobileno}"></span>
+    
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+    
+                                            <label class="control-label-long" >Indicate your Gender </label>
+                                            <div class="controls-long">
+                                                <input type="text" th:field="*{gender}" id="gender" placeholder="indicate your gender">                                             <span class="inline-block" >
+                                                    <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+    
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+    
+                                            <label class="control-label-long" >Area of residence </label>
+                                            <div class="controls-long">
+                                                <input type="text" th:field="*{residence}" id="residence" placeholder="">                                             <span class="inline-block" >
+                                                    <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('residence')}" th:errors="*{residence}"></span>
+    
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+    
+                                            <label class="control-label-long" >Address  </label>
+                                            <div class="controls-long">
+                                                <input type="text" th:field="*{address}" id="address" placeholder="indicate your address">                                             <span class="inline-block" >
+                                                    <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+    
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+    
+                                            <label class="control-label-long" >Next of kin  </label>
+                                            <div class="controls-long">
+                                                <input type="text" th:field="*{nok}" id="nok" >                                             <span class="inline-block" >
+                                                    <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('nok')}" th:errors="*{nok}"></span>
+    
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+    
+                                            <label class="control-label-long" >Relationship  </label>
+                                            <div class="controls-long">
+                                                <input type="text" th:field="*{relationship}" id="relationship" placeholder="indicate your relationship with next of kin">                                             <span class="inline-block" >
+                                                    <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('relationship')}" th:errors="*{relationship}"></span>
+    
+                                            </div>
+                                        </div>
+                                           
+                                   
+                                       
+                           
+                                        <div class="controls-long">
+                                            <input type="submit" id="LoginButton" value="submit" class="btn btn-primary">
+                                          
+                                        </div>
+                                    </div>
+                                   
+                                </fieldset>
+    
+    
+                            </form>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+       
+   
+                 
+                <hr>
+                <script type="text/javascript" th:src="@{/bootstrap/moment.js.download}"></script>
+                <script type="text/javascript" th:src="@{/bootstrap/Chart.min.js.download}"></script>
+               <script type="text/javascript" th:src="@{/bootstrap/new-charts.js.download}"></script>
+               <script type="text/javascript" th:src="@{/bootstrap/bootstrap-transition.js.download}"></script>
+               <script type="text/javascript" th:src ="@{/bootstrap/bootstrap-alert.js.download}"></script>
+               <script type="text/javascript" th:src="@{/bootstrap/bootstrap-modal.js.download}"></script>
+               <script type="text/javascript" th:src="@{/bootstrap/jquery/jquery.dataTables.js.download}"></script>
+                <script type="text/javascript" src="@{/bootstrap/TableTools.js.download}"></script>
+                <script type="text/javascript" src="@{/bootstrap/ZeroClipboard.js.download}"></script>
+                <script type="text/javascript" src="@{/bootstrap/jquery/jquery.autocomplete.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-tagsinput.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-dropdown.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-scrollspy.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-tab.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-tooltip.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-popover.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-button.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-collapse.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-carousel.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-typeahead.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-datepicker.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootbox.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/Validation.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/application.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/main.js(1).download}"></script>
+               
+               <script type="text/javascript" src="@{/bootstrap/modernizr.js.download}"></script>
+            
+        
+    </body>
+    </html>
+
+

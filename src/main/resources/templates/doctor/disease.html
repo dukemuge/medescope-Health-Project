@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>disease and condition</title>
+
+</head>
+<body>
+
+
+  
+
+    <link th:href="@{/bootstrap/style_2016.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/jquery.autocomplete.css}" rel="stylesheet">
+
+    <link th:href="@{bootstrap/font-awesome.min.css}" rel="stylesheet">
+    
+    
+    <script type="text/javascript" th:src="@{/bootstrap/saved_resource}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/jquery.dataTables.js.download}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/TableTools.js.download}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/ZeroClipboard.js.download}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/dataTables.bootstrap.js.download}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/jquery.autocomplete.js.download}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/bootstrap-tagsinput.js.download}"></script>
+
+    <style type="text/css"> video { width: 340px; height:340px; text-align: center; margin-left:120px } </style>
+<link type="text/css" rel="stylesheet" charset="UTF-8" th:href="@{/bootstrap/translateelement.css}">
+<script type="text/javascript" charset="UTF-8" th:src="@{/bootstrap/main.js.download}"></script>
+<script type="text/javascript" charset="UTF-8" th:src="@{/bootstrap/element_main.js.download}"></script>
+</head>
+
+
+    <body style="position: relative; min-height: 100%; top: 0px;">
+    <script type="text/javascript" th:src="@{/bootstrap/jquery.js.download}"></script>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                    <a class="brand" href="">
+                        <img src="" alt="" width="320" height="52" /></a>
+                    <ul class="nav">
+                    <li><a href="/" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+        
+                    
+                    <li class="divider"></li>
+                    <li><a href="/enrollprofile"><strong>Edit and Check my Profile</strong></a></li>
+        
+                    <li class="divider"></li>
+                     <li><a href="https://www.dropbox.com/" target="_blank"><strong>Store my Documents to cloud</strong>
+                            </a></li>
+        
+                            <li class="divider"></li>
+                            <li><a href="/enrollmessage"target="_blank" ><strong>Send message to fellow doctor</strong></a></li>
+                    
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="@routes.DoctorController.doctimeline()" style="color: #fff"><strong>Doctor's Timeline</strong></a></li>   
+                </ul>
+                
+            </div>
+        </div> 
+        <div class="container-fluid">
+
+
+    <div class="content healthaz">
+        <div class="row-fluid">
+
+            <div class="well sidebar-nav">
+                <ul class="nav nav-list">
+                    <li class="nav-header">hEALTH LIBRARY </li>
+                    <li><a href="/viewdisease">Disease and conditions</a></li>
+                    <li><a href="/viewtest">Test and procedures</a></li>
+                    <li><a href="/viewdrugs">Drugs and medications</a></li>
+
+
+                </ul>
+
+            </div>
+
+            <!--#sidebar.span3-->
+            <div class="span12" style="margin-left:0px">
+                
+                <iframe th:src="@{bootstrap/disease.html}" style="border: none; height: 700px; width: 100%; overflow-y:hidden"></iframe>
+                                
+            </div>
+        </div>
+    </div>
+
+        
+        </div>
+        
+
+        <div class="modal hide" id="alertModal">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    x</button>
+                <h3 id="alertTitle" style="border-bottom:none">Medelinked
+                </h3>
+            </div>
+            <div class="modal-body">
+                <p id="alertBody">
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="/" class="btn" data-dismiss="modal">Close</a>
+            </div>
+        </div>
+        
+        <hr>
+        
+        
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-transition.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-alert.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-modal.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-dropdown.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-scrollspy.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-tab.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-tooltip.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-popover.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-button.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-collapse.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-carousel.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-typeahead.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-datepicker.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootbox.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/Validation.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/application.js.download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/main.js(1).download}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/modernizr.js.download}"></script>
+    
+
+</body></html>

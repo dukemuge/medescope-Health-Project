@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>success message</title>
+
+</head>
+<body>
+
+
+  
+
+    <link th:href="@{/bootstrap/style_2016.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/jquery.autocomplete.css}" rel="stylesheet">
+
+    <link th:href="@{bootstrap/font-awesome.min.css}" rel="stylesheet">
+
+
+
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+                
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                   <li class="divider"></li>
+                    <li><a href="/enrollMessage" target="_blank"><strong>Send message to fellow doctors</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/addprofile"><strong>Manage my  profile</strong></a></li>
+                    <li class="divider"></li>
+                     <li><a href="/resetaccount"><strong>manage my account</strong>
+                            </a></li>
+                    
+                    <li class="divider"></li>
+                    <li><a href="/viewannouncementd"><strong>Announcement</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewdoctortimeline" style="color: #fff"><strong>Doctor Timeline</strong></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div> 
+        <div class="container-fluid">
+
+    <div class="row-fluid">
+  <div class="sidebar-nav">
+            <ul class="nav nav-list">
+                    <li class="nav-header">Manage my treatment</li>
+                <li><a href="/enrollrecord" title="Add Patient">
+                    <img th:src="@{/img/folder.png}">Add and view records for patients I have treated</a></li>
+                    
+                    <li><a href="/viewallrecords" title="Share Individual Records with Health Providers">
+                <img th:src="@{/img/folder.png}">Access all medical records of the hospital database</a></li>
+                <li><a href="/enrollrefer" title="My Health Devices">
+                    <img th:src="@{/img/refer.png}">Refer a patient</a></li>
+                
+                    <li><a href="/referal" title="Share Individual Records with Health Providers">
+                        <img th:src="@{/img/refer2.png}">View Referrals</a></li>
+                    
+                    <li class="nav-header">Reminders and Appointments</li>
+                    <li><a href="/enrollremind" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{img/alert.png}">Add and view notification &amp; Reminders</a></li>
+                       
+                        <li><a href="/enrollappointment" data-toggle="modal" title="Appointments and Reminders">
+                                <img th:src="@{/img/appointment.png}">View my  appointments</a></li>
+                                 <li><a href="/enrollappointment" data-toggle="modal" title="Appointments and Reminders">
+                              
+
+
+                                <li class="nav-header">Health Library</li>
+                    <li><a href="/viewdisease">
+                        <img th:src="@{/img/disease.png}">Diseases and Conditions</a></li>
+                    <li><a href="/viewtest">
+                            <img th:src="@{/img/test.png}">Tests and Procedures</a></li>
+                    <li><a href="/viewdrug">
+                                <img th:src="@{/img/drug..png}">Drugs and supplements</a></li>
+
+                                
+                                <li class="nav-header">downloads and documents</li>
+                    <li><a href="/viewdownload">
+                        <img th:src="@{/img/download23.png}">view downloads</a></li>
+                  <li><a href="https://www.dropbox.com/"  target="_blank">
+                        <img th:src="@{/img/imagesjjk.png}">store your documents to cloud</a></li>
+    
+                   
+            </ul>
+            <ul class="thumbnails" style="padding-top: 10px; min-height: 100px;" id="friendsList">
+            </ul>
+        </div>
+  
+        <div class="content">
+            <div class="row-fluid">
+                <div class="span3">&nbsp;</div>
+                <div class="span6">
+                    <div class="login-container">
+                        <div class="login-span">
+                            
+    
+                            <form class="form-horizontal well-plain-form" method="post" th:action="@{/addrecord}" th:object="${record}">
+    
+                                <fieldset>
+                                        <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                                                <p>Please Correct Errors Below</p>
+                                            </div>
+    
+                                    <h4 class="under-border">Add records of patients  I have treated</h4>
+                                    <br>
+    
+                                         
+                                    <div class="control-group">
+    
+                                        <label class="control-label-long" >Name </label>
+                                        <div class="controls-long">
+                                            <input type="text" th:field="*{name}" id="name" placeholder="enter name of patient">                                             <span class="inline-block" >
+                                                <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+    
+                                        <label class="control-label-long" >Date of visit </label>
+                                        <div class="controls-long">
+                                            <input type="date" th:field="*{dateofvisit}" id="dateofvisit" placeholder="enter date of visit">                                             <span class="inline-block" >
+                                                <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('dateofvisit')}" th:errors="*{dateofvisit}"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+    
+                                        <label class="control-label-long" >Phone no </label>
+                                        <div class="controls-long">
+                                            <input type="text" th:field="*{phoneno}" id="phoneno" placeholder="indicate phone no of admission">                                             <span class="inline-block" >
+                                                <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('phoneno')}" th:errors="*{phoneno}"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+    
+                                        <label class="control-label-long" >Symptoms </label>
+                                        <div class="controls-long">
+                                            <textarea rows="6" cols="" th:field="*{symptoms}" id="symptoms"></textarea>
+                                                <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('symptoms')}" th:errors="*{symptoms}"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+    
+                                        <label class="control-label-long" >Lab findings </label>
+                                        <div class="controls-long">
+                                            <textarea rows="6" cols="" th:field="*{labfindings}" id="labfindings"></textarea>
+                                                <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('labfindings')}" th:errors="*{labfindings}"></span>
+
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+    
+                                        <label class="control-label-long" >Medication </label>
+                                        <div class="controls-long">
+                                            <textarea rows="6" cols="" th:field="*{medication}" id="medication"></textarea>
+                                            <span class="inline-block" >
+                                                <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('medication')}" th:errors="*{medication}"></span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+    
+                                        <label class="control-label-long" >Recommendation </label>
+                                        <div class="controls-long">
+                                            <textarea rows="6" cols="" th:field="*{recommendation}" id="recommendation"></textarea>
+                                                <span  class ="inline-block alert alert-danger" th:if="${#fields.hasErrors('recommendation')}" th:errors="*{recommedation}"></span>
+
+                                        </div>
+                                    </div>
+                                            
+                                   
+                                   
+                                       
+                           
+                                        <div class="controls-long">
+                                            <input type="submit" id="LoginButton" value="submit" class="btn btn-primary">
+                                          
+                                        </div>
+                                    </div>
+                                   
+                                </fieldset>
+    
+    
+                            </form>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+       
+   
+                 
+                <hr>
+                <script type="text/javascript" th:src="@{/bootstrap/moment.js.download}"></script>
+                <script type="text/javascript" th:src="@{/bootstrap/Chart.min.js.download}"></script>
+               <script type="text/javascript" th:src="@{/bootstrap/new-charts.js.download}"></script>
+               <script type="text/javascript" th:src="@{/bootstrap/bootstrap-transition.js.download}"></script>
+               <script type="text/javascript" th:src ="@{/bootstrap/bootstrap-alert.js.download}"></script>
+               <script type="text/javascript" th:src="@{/bootstrap/bootstrap-modal.js.download}"></script>
+               <script type="text/javascript" th:src="@{/bootstrap/jquery/jquery.dataTables.js.download}"></script>
+                <script type="text/javascript" src="@{/bootstrap/TableTools.js.download}"></script>
+                <script type="text/javascript" src="@{/bootstrap/ZeroClipboard.js.download}"></script>
+                <script type="text/javascript" src="@{/bootstrap/jquery/jquery.autocomplete.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-tagsinput.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-dropdown.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-scrollspy.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-tab.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-tooltip.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-popover.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-button.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-collapse.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-carousel.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-typeahead.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootstrap-datepicker.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/bootbox.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/Validation.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/application.js.download}"></script>
+               <script type="text/javascript" src="@{/bootstrap/main.js(1).download}"></script>
+               
+               <script type="text/javascript" src="@{/bootstrap/modernizr.js.download}"></script>
+            
+        
+    </body>
+    </html>
+
+

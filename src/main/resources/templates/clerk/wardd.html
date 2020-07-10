@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>ward d</title>
+
+</head>
+<body>
+
+
+  
+
+    <link th:href="@{/bootstrap/style_2016.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/jquery.autocomplete.css}" rel="stylesheet">
+
+    <link th:href="@{bootstrap/font-awesome.min.css}" rel="stylesheet">
+
+
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+                
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                    <li class="divider"></li>
+                    
+                  
+                    
+                    <li class="divider"></li>
+                    <li><a href="https://www.dropbox.com/" target="_blank" ><strong>Save hospital document to cloud...........</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewclerktimeline" style="color: #fff"><strong>Clerk  Timeline.......</strong></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div> 
+
+    <div class="row-fluid">
+  <div class="sidebar-nav">
+            <ul class="nav nav-list">
+                    <li class="nav-header">Clerk </li>
+                    <li><a href="/enrollrecord" title="My Health Providers">
+                        <img th:src="@{/img/folder.png}">Edit and view patients medical data records</a></li>
+                          <li><a href="/viewlabrequests" title="My Health Providers">
+                        <img th:src="@{/img/folder.png}">View lab requests</a></li>
+                     <li><a href="/enrolladmitted" title="My Health Providers">
+                        <img th:src="@{/img/folder.png}">Add admitted patients to our system</a></li>
+
+                         <li><a href="/enrollvisiting" title="My Health Providers">
+                        <img th:src="@{/img/folder.png}">Register visiting patients to our system</a></li>
+                   
+                   
+                   
+                      
+    
+    
+                   
+            </ul>
+            <ul class="thumbnails" style="padding-top: 10px; min-height: 100px;" id="friendsList">
+            </ul>
+        </div>
+         <div class="container-fluid"> 
+        
+        
+        <div class="content" >
+            <div class="row-fluid">    
+                <div class="span16">
+                        <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                            <th>Name of patient</th>
+                            <th>Room of admission</th>
+                            <th>Reason for admission</th>
+                            <th>Date of admission</th>
+                            <th>Gender</th>
+                            <th>Phoneno</th>
+                            <th>Date of discharge</th>
+                            <th>Action</th>
+                      </tr>
+                    </thead> 
+                    <tfoot>
+                        <tr>
+                            <th>Name of patient</th>
+                            <th>Room of admission</th>
+                            <th>Reason for admission</th>
+                            <th>Date of admission</th>
+                            <th>Gender</th>
+                            <th>Phoneno</th>
+                            <th>Date of discharge</th>
+                            <th>Action</th>
+                      </tr>
+                    </tfoot>
+
+                    <tbody> 
+                        <tr th:each="wardd : ${wardds}">
+                            <td th:text="${wardd.name}"></td>
+                            <td th:text="${wardd.room}"></td>
+                            <td th:text="${wardd.reason}"></td>
+                            <td th:text="${wardd.doa}"></td>
+                            <td th:text="${wardd.gender}"></td>
+                            <td th:text="${wardd.phoneno}"></td>
+                            <td th:text="${wardd.dod}"></td>
+
+
+
+
+
+
+                            <td>
+                                <a th:href="@{/edit/wardd/{id}(id=${wardd.id})}">Edit</a>
+                            <a th:href="@{/delete/wardd/{id}(id=${wardd.id})}">Delete</a>
+                        </td>
+                        </tr>
+                            
+                          
+                        
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+             </div> 
+                
+     </div> 
+        
+
+    <input type="hidden" id="ForgeryToken" value="4_AQfS__mkeQZVSpu43aqSc8NZHK3g0IuuRyeyEnDM6rN3RN8_5x8_j04a5W1zaWwn3J3CdFv08W4Xs7nVnNvhpN86g1,jIaZ4eFNrUSiKwwh3iDAf2KVx6Mg20SjvA4fMgR9-Es4odRGWSnWTdO2Ei0vOX4cFGZ1TxUAD13L8xEUCL647RE7tSGxSTiG5ZDwmUH9joSIBl2e0">
+       
+    <hr>
+    <!-- Placed at the end of the document so the pages load faster -->
+             
+            <script th:src="@{/jquery3/jquery-3.3.1.js}"></script>
+            <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+            <script th:src="@{/datatables/js/jquery.dataTables.min.js}"></script>
+            <script th:src="@{/datatables/js/dataTables.bootstrap4.min.js}"></script>
+            <script th:src="@{/datatables/js/sb-admin-datatables.min.js}"></script>
+        
+    
+</body></html>

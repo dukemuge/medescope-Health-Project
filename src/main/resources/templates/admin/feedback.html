@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>donation</title>
+
+</head>
+<body>
+
+
+
+    <link th:href="@{/css/style_2016.css}" rel="stylesheet">
+
+    <link th:href="@{/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/jquery/jquery.autocomplete.css}" rel="stylesheet">
+
+
+    
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner clearfix">
+        <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+        
+        <ul class="nav">
+            <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                <strong>Logout</strong></a></li>
+            <li class="divider"></li>
+            
+          
+            
+            <li class="divider"></li>
+            <li><a href="https://www.dropbox.com/" target="_blank" ><strong>Save hospital document to cloud...........</strong></a></li>
+            
+            <li class="divider"></li>
+            <li style="border:1px solid #fff"><a href="/viewadmintimeline" style="color: #fff"><strong>Admin Timeline.......</strong></a></li>
+            
+        </ul>
+        
+    </div>
+</div> 
+<!-- <div class="container-fluid"> -->
+
+<div class="row-fluid">
+<div class="sidebar-nav">
+    <ul class="nav nav-list">
+        <ul class="nav nav-list">
+            <li class="nav-header">hospital staff</li>
+            <li><a href="/registerstaff" title="My Health Providers">
+                <img th:src="@{/img/images7.jfif}">add and view hospital staff</a></li>
+           
+            
+            <li class="nav-header">doctor tasks</li>
+            <li><a href="/registerdoc" data-toggle="modal" title="Appointments and Reminders">
+                <img th:src="@{/img/refer.png}">Register doctor to network</a></li>
+               
+                <li><a href="/managedoc" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/refer.png}">Manage doctor account</a></li>
+                         
+            <li class="nav-header">patient tasks</li>
+            <li><a href="/viewpatient" data-toggle="modal" title="Appointments and Reminders">
+                <img th:src="@{/img/imageskl.png}">view admitted patient</a></li>
+                <li><a href="/patientaccount" data-toggle="modal" title="Appointments and Reminders">
+                <img th:src="@{/img/images6.jfif}">manage patient account</a></li>
+               
+                <li><a href="/viewlabrequests" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{img/folder.png}">View lab requests</a></li>
+                        
+                <li><a href="/viewfeedback" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/feedback.png}">view feedback</a></li>
+                        
+                <li><a href="/viewdonation" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{/img/gift.png}">view pledges and donations</a></li>
+                        
+            <li class="nav-header">Announcements</li>
+            <li><a href="/postannouncement" data-toggle="modal" title="Appointments and Reminders">
+                <img th:src="@{/img/alert.png}">Post announcements</a></li>
+                  <li><a href="/enrollremind" data-toggle="modal" title="Appointments and Reminders">
+                <img th:src="@{/img/insurance.png}">Add insurance supported</a></li>
+                 <li><a href="/uploaddocument" data-toggle="modal" title="Appointments and Reminders">
+                <img th:src="@{/img/imagesjjk.png}">Upload doctor stuff</a></li>
+
+
+           
+    </ul>
+        <ul class="thumbnails" style="padding-top: 10px; min-height: 100px;" id="friendsList">
+        </ul>
+</div>
+        <!--/.well -->
+        <div class="content"> 
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active">Insurance supported </li>
+            </ol>
+            <!-- Example DataTables Card-->
+             <div class="card mb-12"> 
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                            <th>Ratings</th>
+                            <th>Areas of improvement</th>
+                            <th>Suggestions fronted</th>
+                            <th>Reportings made</th>
+                            <th>Action</th>
+                      </tr>
+                    </thead> 
+                    <tfoot>
+                        <th>Ratings</th>
+                        <th>Areas of improvement</th>
+                        <th>Suggestions fronted</th>
+                        <th>Reportings made</th>
+                        <th>Action</th>
+                    </tfoot>
+
+                    <tbody> 
+                        <tr th:each="feedback : ${feedbacks}">
+                            <td th:text="${feedback.rate}"></td>
+                            <td th:text="${feedback.improvement}"></td>
+                            <td th:text="${feedback.suggestions}"></td>
+                            <td th:text="${feedback.report"></td>
+                          <td>  
+                            <a th:href="${'/feedback/delete/' + feedback.id}">Delete</a>                        </td>
+                        </tr>
+                            
+                          
+                        
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+             </div> 
+                
+     </div> 
+        
+
+    <input type="hidden" id="ForgeryToken" value="4_AQfS__mkeQZVSpu43aqSc8NZHK3g0IuuRyeyEnDM6rN3RN8_5x8_j04a5W1zaWwn3J3CdFv08W4Xs7nVnNvhpN86g1,jIaZ4eFNrUSiKwwh3iDAf2KVx6Mg20SjvA4fMgR9-Es4odRGWSnWTdO2Ei0vOX4cFGZ1TxUAD13L8xEUCL647RE7tSGxSTiG5ZDwmUH9joSIBl2e0">
+   
+        <hr>
+        <script type="text/javascript" th:src = "@{/bootstrap/moment.js.download}"></script>
+        <script type="text/javascript" th:src = "@{/bootstrap/Chart.min.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/new-charts.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-transition.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-alert.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-modal.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/jquery/jquery.dataTables.js.download}"></script>
+        <script type="text/javascript" th:src = "@{/bootstrap/TableTools.js.download}"></script>
+        <script type="text/javascript" th:src = "@{/bootstrap/ZeroClipboard.js.download}"></script>
+        <script type="text/javascript" th:src = "@{/dataTables/dataTables.bootstrap.js.download}"></script>
+        <script type="text/javascript" th:src = "@{/jquery/jquery.autocomplete.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-tagsinput.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-dropdown.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-scrollspy.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-tab.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-tooltip.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-popover.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-button.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-collapse.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-carousel.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-typeahead.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootstrap-datepicker.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/bootbox.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/Validation.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/application.js.download}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/main.js(1).download}"></script>
+       <script th:src = "@{/jquery/jquery.min.js}"></script>
+       <script th:src = "@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+       <script th:src = "@{/jquery-easing/jquery.easing.min.js}"></script>
+       <script th:src = "@{/datatables/jquery.dataTables.js}"></script>
+       <script th:src = "@{/datatables/dataTables.bootstrap4.js}"></script>
+       <script th:src = "@{/js/sb-admin.min.js}"></script>
+       <script th:src = "@{/js/sb-admin-datatables.min.js}"></script>
+       <script type="text/javascript" th:src = "@{/bootstrap/modernizr.js.download}"></script>
+    
+
+</body></html>
+
+
+
+
+

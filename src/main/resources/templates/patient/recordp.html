@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Add Reminder</title>
+
+</head>
+<body>
+
+
+
+    <link th:href="@{/css/style_2016.css}" rel="stylesheet">
+
+    <link th:href="@{/font-awesome.min.css}" rel="stylesheet">
+
+
+    <body style="position: relative; min-height: 100%; top: 0px;">
+
+        
+          
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+                
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/enrollfeedback" target="_blank"><strong>Give us your Feedback</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/enrolldonation"><strong>Donate to our courses</strong></a></li>
+                    <li class="divider"></li>
+                     <li><a href="/resetpassword"><strong>manage my account</strong>
+                            </a></li>
+                    
+                    <li class="divider"></li>
+                    <li><a href="/viewannouncement"><strong>Announcement</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewpatienttimeline" style="color: #fff"><strong>Patient Timeline</strong></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div> 
+        <!-- <div class="container-fluid"> -->
+
+    <div class="row-fluid">
+  <div class="sidebar-nav">
+            <ul class="nav nav-list">
+                    <li class="nav-header">Manage your health</li>
+                    <li><a href="/enrollrequest">
+                        <img th:src="@{/img/result.png}">Request your lab results</a></li>
+                    <li><a href="/enrollrecordp" >
+                        <img th:src="@{/img/folder.png}">Add and save my medical data</a></li>
+                    <li><a href="/addhealth" title="Share Individual Records with Health Providers">
+                        <li><a href="https://www.dropbox.com/" target="_blank" title="My Health Devices">
+                            <img th:src="@{/img/imagesjjk.png}">Save my medical records to Cloud</a></li>
+                        <img th:src="@{/img/images7.jfif}"> Add my Personal profile</a></li>
+                        <li><a href="/enrollprofile" >
+                            <img th:src="@{/img/images7.jfif}">View and edit my personal profile</a></li>
+                            <li><a href="/viewinsurance" title="Share Individual Records with Health Providers">
+  <img th:src="@{/img/insurance.png}">Health insurance card supported</a></li>
+                    
+                    <li class="nav-header">Reminders and Appointments</li>
+                    <li><a href="/remind/new" data-toggle="modal" >
+                        <img th:src="@{/img/alert.png}">Add and view notification &amp; Reminders</a></li>
+                       
+                        <li><a href="/enrollappointment" data-toggle="modal">
+                                <img th:src="@{/img/appointment.png}">Book appointments</a></li>
+    
+                   
+            </ul>
+            <ul class="thumbnails" style="padding-top: 10px; min-height: 100px;" id="friendsList">
+            </ul>
+        </div>
+        <div class="container-fluid"> 
+        
+        
+            <div class="content" >
+                <div class="row-fluid">    
+                    <div class="span16">
+                            <div class="table-responsive">
+                              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                              <tr>
+                        <th>Attended by Doctor</th>
+                        <th>Date of visit</th>
+                        <th>Symptoms</th>
+                        <th>Lab findings</th>
+                        <th>Medication</th>
+                        <th>Recommendation</th>
+                        <th>Action</th>
+                  </tr>
+                </thead> 
+                <tfoot>
+                   
+                    <tr>
+                        <th>Attended by Doctor</th>
+                        <th>Date of visit</th>
+                        <th>Symptoms</th>
+                        <th>Lab findings</th>
+                        <th>Medication</th>
+                        <th>Recommendation</th>
+                        <th>Action</th>
+                  </tr>
+                </tfoot>
+
+                <tbody> 
+                    <tr th:each="recordp : ${recordps}">
+                        <td th:text="${recordp.name}"></td>
+                        <td th:text="${recordp.dateofvisit}"></td>
+                        <td th:text="${recordp.symptoms}"></td>
+                        <td th:text="${recordp.labfindings}"></td>
+                        <td th:text="${recordp.medication}"></td>
+                        <td th:text="${recordp.recommendation}"></td>
+
+
+
+
+                        <td>
+                            <a th:href="@{/edit/recordp/{id}(id=${recordp.id})}">Edit</a>
+                        <a th:href="@{/delete/recordp/{id}(id=${recordp.id})}">Delete</a>
+                    </td>
+                    </tr>
+                        
+                      
+                    
+                </tbody>
+              </table>
+            </div>
+          </div>
+         </div> 
+            
+ </div> 
+    
+
+<input type="hidden" id="ForgeryToken" value="4_AQfS__mkeQZVSpu43aqSc8NZHK3g0IuuRyeyEnDM6rN3RN8_5x8_j04a5W1zaWwn3J3CdFv08W4Xs7nVnNvhpN86g1,jIaZ4eFNrUSiKwwh3iDAf2KVx6Mg20SjvA4fMgR9-Es4odRGWSnWTdO2Ei0vOX4cFGZ1TxUAD13L8xEUCL647RE7tSGxSTiG5ZDwmUH9joSIBl2e0">
+
+        
+<hr>
+<!-- Placed at the end of the document so the pages load faster -->
+         
+        <script th:src="@{/jquery3/jquery-3.3.1.js}"></script>
+        <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script th:src="@{/datatables/js/jquery.dataTables.min.js}"></script>
+        <script th:src="@{/datatables/js/dataTables.bootstrap4.min.js}"></script>
+        <script th:src="@{/datatables/js/sb-admin-datatables.min.js}"></script>
+    
+
+</body></html>
+
+

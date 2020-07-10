@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>view patients in ward C</title>
+
+</head>
+<body>
+
+
+
+
+    <link th:href="@{/bootstrap/style_2016.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/jquery.css}" rel="stylesheet">
+
+    <link th:href="@{/bootstrap/font-awesome.css}" rel="stylesheet">
+    
+    
+    <script type="text/javascript" th:src="@{/bootstrap/jquery_003.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/jquery_002.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/TableTools.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/ZeroClipboard.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/dataTable]s.js"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/bootstrap/bootstrap-tagsinput.js}"></script>
+
+    <style type="text/css" media="print">
+        body { visibility: hidden; display: none }
+    </style>
+
+    <style type="text/css"> video { width: 340px; height:340px; text-align: center; margin-left:120px } </style>{/
+<link type="text/css" rel="stylesheet" charset="UTF-8" th:href="@{/bootstrap/translateelement.css}">
+<script type="text/javascript" charset="UTF-8" th:src="@{/bootstrap/main_002.js}"></script>
+<script type="text/javascript" charset="UTF-8" th:src="@{/bootstrap/element_main.js}"></script></head>
+
+
+    <body style="position: relative; min-height: 100%; top: 0px;">
+
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+
+                
+
+                <a class="brand" href="#"></a>
+
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                   <li class="divider"></li>
+                    <li><a href="/enrollMessage" target="_blank"><strong>Send message to fellow doctors</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/addprofile"><strong>Manage my  profile</strong></a></li>
+                    <li class="divider"></li>
+                     <li><a href="/viewaccount"><strong>manage my account</strong>
+                            </a></li>
+                    
+                    <li class="divider"></li>
+                    <li><a href="/viewannouncementd"><strong>Announcement</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewdoctortimeline" style="color: #fff"><strong>Doctor Timeline</strong></a></li>
+                    
+                </ul>
+                <div class="mobile-nav-toggle">
+            	    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40.8 30" enable-background="new 0 0 40.8 30" xml:space="preserve">
+				    <g id="sB9xYp.tif">
+					    <g>
+						    <path fill="#F1F2F2" d="M2.6,30c-0.3-0.1-0.6-0.1-0.9-0.2c-1-0.4-1.6-1-1.7-1.9c0-0.9,0-1.7,0-2.6c0-1.2,1.3-2.2,2.8-2.2
+							    c7,0,14,0,21,0c4.7,0,9.3,0,14,0c1.3,0,2.4,0.6,2.7,1.6c0.1,0.2,0.1,0.5,0.1,0.7c0,0.7,0,1.5,0,2.2c0,1.2-1,2.1-2.5,2.3
+							    c0,0-0.1,0-0.1,0C26.4,30,14.5,30,2.6,30z"></path>
+						    <path fill="#F1F2F2" d="M20.4,0C26.2,0,32,0,37.7,0c1,0,1.8,0.2,2.4,0.8c0.4,0.4,0.7,0.8,0.7,1.4c0,0.8,0,1.7,0,2.5
+							    c0,1.2-1.3,2.2-2.9,2.2c0,0-0.1,0-0.1,0c-11.6,0-23.2,0-34.8,0c-1.4,0-2.6-0.7-2.9-1.8C0,5,0,4.8,0,4.6c0-0.7,0-1.5,0-2.2
+							    C0,1.2,1,0.2,2.5,0c0.2,0,0.4,0,0.6,0C8.9,0,14.7,0,20.4,0z"></path>
+						    <path fill="#F1F2F2" d="M20.4,18.5c-5.8,0-11.6,0-17.4,0c-1.5,0-2.7-0.8-2.9-2c0-0.1,0-0.2,0-0.3c0-0.8,0-1.6,0-2.3
+							    c0-1,0.8-1.9,2-2.2c0.3-0.1,0.7-0.1,1.1-0.1c8,0,15.9,0,23.9,0c3.6,0,7.2,0,10.8,0c1.2,0,2.2,0.4,2.7,1.3c0.2,0.3,0.3,0.7,0.3,1
+							    c0,0.8,0,1.5,0,2.3c0,1.2-1,2.1-2.5,2.3c-0.1,0-0.3,0-0.4,0C32.1,18.5,26.2,18.5,20.4,18.5z"></path>
+					    </g>
+				    </g>
+				    </svg>
+                </div>
+            </div>
+
+        </div>
+
+        
+        <div class="container-fluid">
+        
+    
+     <br>
+    <br>
+   
+    
+    <div class="content" id="personalWizardPage">
+        <div class="row-fluid">    
+        	<div class="span10">
+                <div class="well-plain-form">                           
+                                 
+                    <h3 class="under-border">name of patient</h3>
+                    <br>
+                    
+                    <div class="control-group">
+                        <div class="alert alert-info">
+                                <p  th:text="${wardc.name}">name</p>
+
+                            
+                        </div>
+                    </div>
+                    <h3 class="under-border">Room of admission</h3>
+                    <br>
+                    
+                    <div class="control-group">
+                        <div class="alert alert-info">
+                                <p  th:text="${wardc.room}">room of admission</p>
+
+                            
+                        </div>
+                    </div>
+                    <h3 class="under-border">Reason for admission</h3>
+                    <br>
+                    
+                    <div class="control-group">
+                        <div class="alert alert-info">
+                                <p  th:text="${wardc.reason}">reason</p>
+
+                            
+                        </div>
+                    </div>
+                    <h3 class="under-border">Date of admission</h3>
+                    <br>
+                    
+                    <div class="control-group">
+                        <div class="alert alert-info">
+                                <p  th:text="${wardc.doa}">doa</p>
+
+                            
+                        </div>
+                    </div>
+                    <h3 class="under-border">Gender</h3>
+                    <br>
+                    
+                    <div class="control-group">
+                        <div class="alert alert-info">
+                                <p  th:text="${wardc.gender}">gender</p>
+
+                            
+                        </div>
+                    </div>
+                    <h3 class="under-border">Phone no of patient</h3>
+                    <br>
+                    
+                    <div class="control-group">
+                        <div class="alert alert-info">
+                                <p  th:text="${wardc.phoneno}">mobile no</p>
+
+                            
+                        </div>
+                    </div>
+                                   
+                    <h3 class="under-border">Date of Discharge</h3>
+                    <br>
+                    
+                    <div class="control-group">
+                        <div class="alert alert-info">
+                                <p  th:text="${wardc.doa}">doa</p>
+                            <p>
+                                <a class="btn btn-warning" style="background-color:#faa732; border:none; color:#fff" href="#providerAdd" data-toggle="modal">Back to  view all patient admitted in ward C&nbsp;<i class="icon-plus-sign icon-white"></i></a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <ul class="thumbnails">
+                        
+                    </ul>
+
+                   
+
+            <div class="span1">&nbsp;</div> 
+        </div>
+    </div>
+    
+    <div id="providerAdd" class="modal hide">
+        
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+                ×</button>
+            <h3 style="border-bottom:none">Health Provider
+                </h3>
+        </div>
+               
+    </div>
+
+   
+        
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-transition.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-alert.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-modal.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-dropdown.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-scrollspy.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-tab.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-tooltip.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-popover.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-button.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-collapse.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-carousel.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-typeahead.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootstrap-datepicker.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/bootbox.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/Validation.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/application.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/main.js}"></script>
+        <script type="text/javascript" th:src="@{/bootstrap/modernizr.js}"></script>
+    
+
+</body></html>

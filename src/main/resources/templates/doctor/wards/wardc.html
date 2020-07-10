@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>view admitted patine in ward C</title>
+
+</head>
+<body>
+
+
+  
+
+    <link th:href="@{/bootstrap/style_2016.css}" rel="stylesheet">
+    <link th:href="@{/bootstrap/jquery.autocomplete.css}" rel="stylesheet">
+    <link th:href="@{/datatables/css/dataTables.bootstrap4.min.css}" rel="stylesheet">
+
+
+    <link th:href="@{bootstrap/font-awesome.min.css}" rel="stylesheet">
+
+
+
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner clearfix">
+                <a class="brand" href=""><img src="" alt="" width="320" height="52" /></a>
+
+                
+                <ul class="nav">
+                    <li><a href="#" onclick="pageTracker._link(this.href); return false;">
+                        <strong>Logout</strong></a></li>
+                   <li class="divider"></li>
+                    <li><a href="/enrollMessage" target="_blank"><strong>Send message to fellow doctors</strong></a></li>
+                    <li class="divider"></li>
+                    <li><a href="/addprofile"><strong>Manage my  profile</strong></a></li>
+                    <li class="divider"></li>
+                     <li><a href="/viewaccount"><strong>manage my account</strong>
+                            </a></li>
+                    
+                    <li class="divider"></li>
+                    <li><a href="/viewannouncementd"><strong>Announcement</strong></a></li>
+                    
+                    <li class="divider"></li>
+                    <li style="border:1px solid #fff"><a href="/viewdoctortimeline" style="color: #fff"><strong>Doctor Timeline</strong></a></li>
+                    
+                </ul>
+                
+            </div>
+        </div> 
+        <!-- <div class="container-fluid"> -->
+
+    <div class="row-fluid">
+  <div class="sidebar-nav">
+            <ul class="nav nav-list">
+                    <li class="nav-header">Manage my treatment</li>
+                <li><a href="/enrollrecord" title="Add Patient">
+                    <img th:src="@{/img/folder.png}">Add and view records for patients I have treated</a></li>
+                    
+                    <li><a href="/viewallrecords" title="Share Individual Records with Health Providers">
+                <img th:src="@{/img/folder.png}">Access all medical records of the hospital database</a></li>
+                <li><a href="/enrollrefer" title="My Health Devices">
+                    <img th:src="@{/img/refer.png}">Refer a patient</a></li>
+                
+                    <li><a href="/referal" title="Share Individual Records with Health Providers">
+                        <img th:src="@{/img/refer2.png}">View Referrals</a></li>
+                    
+                    <li class="nav-header">Reminders and Appointments</li>
+                    <li><a href="/enrollremind" data-toggle="modal" title="Appointments and Reminders">
+                        <img th:src="@{img/alert.png}">Add and view notification &amp; Reminders</a></li>
+                       
+                        <li><a href="/enrollappointment" data-toggle="modal" title="Appointments and Reminders">
+                                <img th:src="@{/img/appointment.png}">View my  appointments</a></li>
+                                 <li><a href="/enrollappointment" data-toggle="modal" title="Appointments and Reminders">
+                              
+
+
+                                <li class="nav-header">Health Library</li>
+                    <li><a href="/viewdisease">
+                        <img th:src="@{/img/disease.png}">Diseases and Conditions</a></li>
+                    <li><a href="/viewtest">
+                            <img th:src="@{/img/test.png}">Tests and Procedures</a></li>
+                    <li><a href="/viewdrug">
+                                <img th:src="@{/img/drug..png}">Drugs and supplements</a></li>
+
+                                
+                                <li class="nav-header">downloads and documents</li>
+                    <li><a href="/viewdownload">
+                        <img th:src="@{/img/download23.png}">view downloads</a></li>
+                  <li><a href="https://www.dropbox.com/"  target="_blank">
+                        <img th:src="@{/img/imagesjjk.png}">store your documents to cloud</a></li>
+    
+                   
+            </ul>
+            <ul class="thumbnails" style="padding-top: 10px; min-height: 100px;" id="friendsList">
+            </ul>
+        </div>
+         <div class="container-fluid"> 
+        
+        
+        <div class="content" >
+            <div class="row-fluid">    
+                <div class="span16">
+                        <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                    <tr>
+                                            <th>Name of patient</th>
+                                            <th>Room of admission</th>
+                                            <th>Reason for admission</th>
+                                            <th>Date of admission</th>
+                                            <th>Gender</th>
+                                            <th>Phoneno</th>
+                                            <th>Date of discharge</th>
+                                            <th>Action</th>
+                                      </tr>
+                    </thead> 
+                    <tfoot>
+                            <tr>
+                                    <th>Name of patient</th>
+                                    <th>Room of admission</th>
+                                    <th>Reason for admission</th>
+                                    <th>Date of admission</th>
+                                    <th>Gender</th>
+                                    <th>Phoneno</th>
+                                    <th>Date of discharge</th>
+                                    <th>Action</th>
+                              </tr>
+                    </tfoot>
+
+                    <tbody> 
+                            <tr th:each="wardc : ${wardcs}">
+                                    <td th:text="${wardc.name}"></td>
+                                    <td th:text="${wardc.room}"></td>
+                                    <td th:text="${wardc.reason}"></td>
+                                    <td th:text="${wardc.doa}"></td>
+                                    <td th:text="${wardc.gender}"></td>
+                                    <td th:text="${wardc.phoneno}"></td>
+                                    <td th:text="${wardc.dod}"></td>
+        
+        
+        
+        
+        
+                                    <td><a th:href="${ '/wardc/' + wardc.id}">View</a></td>
+
+                                </tr>
+                          
+                        
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+             </div> 
+                
+     </div> 
+        
+    
+     <hr>
+     <!-- Placed at the end of the document so the pages load faster -->
+              
+             <script th:src="@{/jquery3/jquery-3.3.1.js}"></script>
+             <script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+             <script th:src="@{/datatables/js/jquery.dataTables.min.js}"></script>
+             <script th:src="@{/datatables/js/dataTables.bootstrap4.min.js}"></script>
+             <script th:src="@{/datatables/js/sb-admin-datatables.min.js}"></script>
+         
+     
+ </body></html>
+ 
